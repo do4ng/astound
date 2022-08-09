@@ -1,0 +1,16 @@
+{
+  "name": "create-astound",
+  "version": "0.0.7",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^8.0.0"
+  },
+  "files": [
+    "dist",
+    "template"
+  ],
+  "bin": {
+    "create-astound": "./dist/index.js"
+  }
+}

@@ -1,0 +1,13 @@
+⚡ Astound + Typescript
+
+<div><span id="message"></span> world!</div>
+
+<script lang="ts">
+  async function main() {
+    const data = await (await fetch('/api')).json();
+
+    document.getElementById('message').innerHTML = data.message;
+  }
+  // main
+  main();
+</script>
