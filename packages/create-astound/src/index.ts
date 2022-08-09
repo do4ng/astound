@@ -28,6 +28,6 @@ async function main() {
   fse.copySync(join(__dirname, '../template/__'), process.cwd());
   const pkg = JSON.parse(fse.readFileSync(join(process.cwd(), 'package.json')).toString());
   pkg.name = app.name;
-  fse.writeFileSync(join(process.cwd(), 'package.json'), JSON.stringify(pkg));
+  fse.writeFileSync(join(process.cwd(), 'package.json'), JSON.stringify(pkg, null, 2));
 }
 main();

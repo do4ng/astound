@@ -1,7 +1,7 @@
 {
   "name": "%name%",
   "dependencies": {
-    "astound": "^0.0.4"
+    "astound": "^0.0.9"
   },
   "scripts": {
     "dev": "astound dev"
