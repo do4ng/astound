@@ -1,0 +1,19 @@
+{
+  "name": "@astoundjs/vite",
+  "version": "0.0.2",
+  "description": "Vite Plugin for Astound",
+  "dependencies": {
+    "express": "^4.18.1",
+    "path-to-regexp": "^6.2.1",
+    "vite": "^3.0.4"
+  },
+  "devDependencies": {
+    "astound": "latest"
+  },
+  "main": "./dist/index.js",
+  "types": "./types",
+  "files": [
+    "dist",
+    "types"
+  ]
+}
