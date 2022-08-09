@@ -1,0 +1,19 @@
+{
+  "name": "astound",
+  "version": "0.0.4",
+  "description": "light and fast full stack engine.",
+  "main": "./dist/index.js",
+  "types": "./types",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "bin": "./dist/bin.js",
+  "dependencies": {
+    "@astoundjs/vite": "latest",
+    "chokidar": "^3.5.3",
+    "colors": "^1.4.0",
+    "esbuild": "^0.14.53",
+    "fast-glob": "^3.2.11"
+  }
+}
