@@ -1,13 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import express from 'express';
 import vite from 'vite';
-import astound from 'astound';
+import * as astound from 'astound';
 import url from 'url';
 import { join, relative } from 'path';
 import { match, pathToRegexp } from 'path-to-regexp';
 import { readFileSync } from 'fs';
 
-export default async function start() {
+export async function start() {
   const config = astound.getConfig();
 
   const viteServer = await vite.createServer({
