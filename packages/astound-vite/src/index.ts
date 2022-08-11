@@ -1,14 +1,14 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import express from 'express';
 import vite from 'vite';
-import * as astound from 'astound';
+import { getConfig, ConfigureRoutes } from 'astound';
 import url from 'url';
 import { join, relative } from 'path';
 import { match, pathToRegexp } from 'path-to-regexp';
 import { readFileSync } from 'fs';
 
 export async function start() {
-  const config = astound.getConfig();
+  const config = getConfig();
 
   const viteServer = await vite.createServer({
     root: join(process.cwd(), config.public || 'public'),
@@ -27,7 +27,7 @@ export async function start() {
 
   app.all('*', (req, res) => {
     const originalurl = url.parse(req.url).pathname;
-    astound.ConfigureRoutes(config).forEach(async (routes) => {
+    ConfigureRoutes(config).forEach(async (routes) => {
       if (match(`/${routes.path.replace(/\\/g, '/')}`)(`${originalurl}/`)) {
         const matches = pathToRegexp(`/${routes.path.replace(/\\/g, '/')}`).exec(`${originalurl}/`);
         const params = {};
