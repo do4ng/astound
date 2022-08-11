@@ -50,7 +50,7 @@ export function generateHTML(html: string, scripts: Array<{ name: string; script
         old.parentNode.replaceChild(news, old);
       });
     };
-    __render();
+    __render();addlistener();
     if (!window.astound) {
       window.astound = {};
     }
@@ -69,7 +69,7 @@ export function generateHTML(html: string, scripts: Array<{ name: string; script
         (script) =>
           `var e=document.createElement("script");e.setAttribute("pagemodule" , "");e.setAttribute("src", "${script.script}");e.setAttribute("type", "module");document.body.appendChild(e);`
       )
-      .join('/**/')}__render();addlistener();});`,
+      .join('/**/')}});`,
   ].join('/*    */');
 }
 
@@ -96,8 +96,6 @@ export function builder(file: Files, config: Config) {
     );
   } else {
     let hash = generateRandom(2);
-
-    console.log(readAppJSON(config));
 
     if (Object.hasOwn(readAppJSON(config), file.file)) {
       hash = readAppJSON(config)[file.file];

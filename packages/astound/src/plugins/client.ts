@@ -34,12 +34,14 @@ async function renderer(href) {
 
   const scripts = JSON.parse(virtualPage.querySelector("script[id='_astound_script']").innerText);
   // is exists script
+  let count = 0;
  document.querySelectorAll('script[pagemodule]').forEach((sc) => {
     if (scripts?.filter(script => sc.getAttribute('src').includes(script)).length >= 1) {
-      window.astound.load[window.location.pathname]();
+      count++;
       scripts[scripts.indexOf(scripts?.filter(script => sc.getAttribute('src').includes(script))[0])] = null;
     }
   });
+  if (count >= 1) window.astound.load[window.location.pathname]();
   scripts.forEach((sc) => {
     if (!sc) return;
     var e = document.createElement('script');

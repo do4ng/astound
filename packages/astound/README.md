@@ -14,5 +14,10 @@ yarn # npm install
 yarn dev # npm run dev
 ```
 
-> ❗ this package is very experimental.
-> it supports only dev-app yet (not production)
+### ❗ Warning
+
+- this package is very experimental.
+
+- it supports only dev-app yet (not production)
+
+- do not use this package for production before `@^1.0.0`

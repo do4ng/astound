@@ -1,7 +1,11 @@
-import { ConfigureRoutes as C } from '../src/router/configure';
 import { Config } from './config';
 
-type Files = ReturnType<typeof C>[0];
+type Files = Array<{
+  path: string;
+  params: string[];
+  ext: string;
+  file: string;
+}>;
 type Module = any;
 
 export * from './plugins';
@@ -17,5 +21,5 @@ export function updatePage(file: Files, config: Config);
 export function newPage(file: Files, config: Config);
 export function removePage(file: Files, config: Config);
 export function build(config?: Config);
-export function ConfigureRoutes(config: Config): ReturnType<typeof C>;
+export function ConfigureRoutes(config: Config): Files;
 export function loadModule(file: string, config: { cfg: Config; alias: string }): Module;
