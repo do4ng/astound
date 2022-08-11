@@ -1,7 +1,7 @@
 # create-astound
 
 ```bash
-npx create-astound # clone template
+npx create-astound@latest # clone template
 
 yarn # install modules
 

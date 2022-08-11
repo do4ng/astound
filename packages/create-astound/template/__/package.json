@@ -1,5 +1,5 @@
 {
-  "name": "%name%",
+  "name": "name",
   "dependencies": {
     "astound": "^0.0.9"
   },
